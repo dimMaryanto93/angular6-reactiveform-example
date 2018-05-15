@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Model} from './app.model';
-import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +27,7 @@ export class AppComponent implements OnInit {
       items: this._form.array([])
     });
 
-    const values = this.formGroup.get('items') as FormArray;
+    const values = this.items;
     for (const model of this.models) {
       values.push(this._form.group({'selected': false, 'id': model.id}));
     }
@@ -39,13 +38,11 @@ export class AppComponent implements OnInit {
   }
 
   submitData() {
-    const itemsValue = this.formGroup.value.items.map(data => {
-      if (data.selected) {
-        return {'id': data.id};
-      } else {
-        return null;
-      }
-    });
+    const itemsValue = this.formGroup.value.items
+      .filter(data => data.selected)
+      .map(data => {
+        return {id: data.id};
+      });
     console.log(itemsValue);
   }
 }
