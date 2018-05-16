@@ -1,19 +1,4 @@
-<form [formGroup]="formGroup" (submit)="submitData()">
-  <div>
-    <label for="id">Kode</label>
-    <input type="text" name="id" id="id" formControlName="id">
-  </div>
-  <div formArrayName="items" *ngFor="let item of items.controls; let i = index;">
-    <div [formGroupName]="i">
-      <input type="checkbox" formControlName="selected" placeholder="Item name">{{models[i].name}}
-    </div>
-  </div>
-  <div formGroupName="selection">
-    <select name="id" id="id" formControlName="id">
-      <option *ngFor="let model of models" [value]="model.id">{{model.name}}</option>
-    </select>
-  </div>
-  <div>
-    <button type="submit">Kirim</button>
-  </div>
-</form>
+Halaman utama
+<hr/>
+<a [routerLink]="['home']"></a>
+<router-outlet></router-outlet>
