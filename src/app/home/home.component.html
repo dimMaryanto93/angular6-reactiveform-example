@@ -1,6 +1,19 @@
-<ul class="nav nav-tabs">
-  <li class="active">Home</li>
-  <li><a [routerLink]="['general']">General</a></li>
-  <li><a [routerLink]="['application']">Application</a></li>
-</ul>
-<router-outlet></router-outlet>
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active">Home</li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul class="nav">
+    <li class="nav-link">
+      <a [routerLink]="['./']" routerLinkActive="active" [routerLinkActiveOptions]="{exac:true}">General</a>
+    </li>
+    <li class="nav-link">
+      <a [routerLink]="['application']" routerLinkActive="active">Application</a>
+    </li>
+  </ul>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

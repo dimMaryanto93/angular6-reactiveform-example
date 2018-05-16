@@ -12,7 +12,7 @@ import {ApplicationComponent} from './home/application/application.component';
 const routerApp: Routes = [
   {
     path: 'home', component: HomeComponent, children: [
-      {path: 'general', component: GeneralComponent},
+      {path: '', component: GeneralComponent},
       {path: 'application', component: ApplicationComponent},
     ]
   }
