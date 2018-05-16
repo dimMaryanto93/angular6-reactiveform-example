@@ -24,7 +24,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.formGroup = this._form.group({
       id: ['', Validators.required],
-      items: this._form.array([])
+      items: this._form.array([]),
+      selection: this._form.group(
+        {'id': ''}
+      )
     });
 
     const values = this.items;
@@ -43,7 +46,8 @@ export class AppComponent implements OnInit {
       .map(data => {
         return {id: data.id};
       });
-    console.log(itemsValue);
+    const value = this.formGroup.value;
+    console.log(value);
   }
 }
 

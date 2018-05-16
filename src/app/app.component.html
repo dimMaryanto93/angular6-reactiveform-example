@@ -8,6 +8,11 @@
       <input type="checkbox" formControlName="selected" placeholder="Item name">{{models[i].name}}
     </div>
   </div>
+  <div formGroupName="selection">
+    <select name="id" id="id" formControlName="id">
+      <option *ngFor="let model of models" [value]="model.id">{{model.name}}</option>
+    </select>
+  </div>
   <div>
     <button type="submit">Kirim</button>
   </div>
