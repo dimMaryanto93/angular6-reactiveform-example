@@ -16,11 +16,20 @@ export class GeneralComponent implements OnInit {
   ngOnInit() {
 
     this.formGroup = this._form.group({
-      'selectName': this._form.control({})
+      'selectName': this._form.control({}),
+      'radio1': this._form.group({
+        'id': this._form.control({})
+      }),
+      'radio2': this._form.group({
+        'id': this._form.control({})
+      })
     });
     this.formGroup.patchValue({
       'selectName': 'L'
     });
   }
 
+  kirimData() {
+    console.log(this.formGroup.value);
+  }
 }

@@ -2,7 +2,7 @@
   general works!
 </p>
 
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" (submit)="kirimData()">
   <div>
     <label>
       <input type="radio" name="selectName" formControlName="selectName" value="L">
@@ -12,5 +12,30 @@
       <input type="radio" name="selectName" formControlName="selectName" value="P">
       P
     </label>
+  </div>
+  <div formGroupName="radio1">
+    Details
+    <label>
+      <input type="radio" formControlName="id" value="On">
+      L
+    </label>
+    <label>
+      <input type="radio" formControlName="id" value="Off">
+      P
+    </label>
+  </div>
+  <div formGroupName="radio2">
+    Details
+    <label>
+      <input type="radio" formControlName="id" value="On">
+      L
+    </label>
+    <label>
+      <input type="radio" formControlName="id" value="Off">
+      P
+    </label>
+  </div>
+  <div>
+    <button type="submit">Klik</button>
   </div>
 </form>
