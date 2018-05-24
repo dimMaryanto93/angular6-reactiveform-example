@@ -1,3 +1,16 @@
 <p>
   general works!
 </p>
+
+<form [formGroup]="formGroup">
+  <div>
+    <label>
+      <input type="radio" name="selectName" formControlName="selectName" value="L">
+      L
+    </label>
+    <label>
+      <input type="radio" name="selectName" formControlName="selectName" value="P">
+      P
+    </label>
+  </div>
+</form>
