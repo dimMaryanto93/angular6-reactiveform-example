@@ -8,6 +8,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class GeneralComponent implements OnInit {
 
+  private value: number = 2;
+
   formGroup: FormGroup;
 
   constructor(private _form: FormBuilder) {
@@ -16,7 +18,9 @@ export class GeneralComponent implements OnInit {
   ngOnInit() {
 
     this.formGroup = this._form.group({
-      'selectName': this._form.control({}),
+      'gender': this._form.group({
+        'selectName': this._form.control(this.value)
+      }),
       'radio1': this._form.group({
         'id': this._form.control({})
       }),
@@ -25,8 +29,9 @@ export class GeneralComponent implements OnInit {
       })
     });
     this.formGroup.patchValue({
-      'selectName': 'L'
+      'gender.selectName': this.value.toString()
     });
+    console.log(this.formGroup.value);
   }
 
   kirimData() {

@@ -3,13 +3,13 @@
 </p>
 
 <form [formGroup]="formGroup" (submit)="kirimData()">
-  <div>
+  <div formGroupName="gender">
     <label>
-      <input type="radio" name="selectName" formControlName="selectName" value="L">
+      <input type="radio" name="selectName" formControlName="selectName" value="1">
       L
     </label>
     <label>
-      <input type="radio" name="selectName" formControlName="selectName" value="P">
+      <input type="radio" name="selectName" formControlName="selectName" value="2">
       P
     </label>
   </div>
